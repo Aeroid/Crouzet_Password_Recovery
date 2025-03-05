@@ -17,8 +17,8 @@ I'm using the USB-Version of the serial cable, but any variant should do. If you
 Using serial port sniffing, you can easily spot that the connection uses 115.200 baud and 7E1 serial settings. The protocol used by the PLC uses ASCII-encoded hex sequences. Commands sent typically start with ":01" and end with "\r\n". They are answered by the PLC with a paired 3-byte response header also starting with ":01" and a longer payload (typically 132 bytes, also ending with "\r\n"). 
 When you try to download a protected program, the protocol will be followed through (about 20 request/response steps) until you will need to enter the "password".
 You have five tries before a 30 minute password lock prolongs any brute force attacks.
-The "password" is validated client side in M3 soft, not the PLC! For this the INT16 little-endian value of the numberic "password" is send to the M3 soft to have it check your password input.
-All that is needed is to send this particualy request and decode password send to M3 soft.
+The "password" is validated client side in M3 soft, not the PLC! For this the INT16 little-endian value of the numeric "password" is send to the M3 soft to have it check your password input.
+All that is needed is to send this particualy request and decode the password sent to M3 soft.
 
 Have fun with PLC programming!
 
